@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,1199 +11,25 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:wght@400;700;900&display=swap"
+        rel="stylesheet">
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Glide.js CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.5.0/css/glide.core.min.css">
-    <style>
-:root {
-    --primary-blue: #1e3a8a;
-    --medium-blue: #3b82f6;
-    --light-blue: #93c5fd;
-    --very-light-blue: #eff6ff;
-    --gold: #d4af37;
-    --light-gold: #fde68a;
-    --white: #ffffff;
-    --light-gray: #f9fafb;
-    --dark: #1f2937;
-    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--dark);
-    background-color: var(--very-light-blue);
-    overflow-x: hidden;
-    line-height: 1.7;
-}
-
-h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--primary-blue);
-    line-height: 1.3;
-}
-
-.navbar {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--medium-blue) 100%);
-    padding: 20px 0;
-    box-shadow: 0 2px 30px rgba(0,0,0,0.15);
-    transition: var(--transition);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar.scrolled {
-    padding: 10px 0;
-    background: rgba(30, 58, 138, 0.98) !important;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-}
-
-.navbar-brand {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: white !important;
-    font-weight: 700;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-}
-
-.navbar-brand:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 10px rgba(255,255,255,0.3);
-}
-
-.navbar-brand i {
-    margin-right: 12px;
-    color: var(--light-gold);
-    font-size: 1.5rem;
-    transition: var(--transition);
-}
-
-.navbar-brand:hover i {
-    transform: rotate(10deg);
-}
-
-.nav-link {
-    color: white !important;
-    font-weight: 600;
-    margin: 0 12px;
-    position: relative;
-    transition: var(--transition);
-    padding: 8px 0 !important;
-    font-size: 1.05rem;
-}
-
-.nav-link:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    background: var(--light-gold);
-    bottom: 0;
-    left: 0;
-    transition: var(--transition);
-    border-radius: 3px;
-}
-
-.nav-link:hover:after {
-    width: 100%;
-}
-
-.nav-link.active:after {
-    width: 100%;
-}
-
-.btn {
-    border-radius: 50px;
-    padding: 12px 28px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-    border: none;
-}
-
-.btn-primary {
-    background: linear-gradient(45deg, var(--primary-blue) 0%, var(--medium-blue) 100%);
-    color: white;
-    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-    transform: translateY(0);
-}
-
-.btn-primary:hover {
-    background: linear-gradient(45deg, var(--medium-blue) 0%, var(--light-blue) 100%);
-    color: white;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
-}
-
-.btn-primary:active {
-    transform: translateY(2px);
-}
-
-.btn-outline-light {
-    border: 2px solid white;
-    color: white;
-    background: transparent;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.btn-outline-light:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.3) 100%);
-    transition: var(--transition);
-    z-index: -1;
-}
-
-.btn-outline-light:hover:before {
-    left: 0;
-}
-
-.btn-outline-light:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(255,255,255,0.1);
-}
-
-.section-title {
-    color: var(--primary-blue);
-    margin-bottom: 50px;
-    position: relative;
-    padding-bottom: 20px;
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 900;
-}
-
-.section-title:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(to right, var(--gold), var(--light-gold));
-    border-radius: 2px;
-}
-
-.hero-section {
-    height: 100vh;
-    min-height: 700px;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%),
-        url('https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/487690035_1073595014803422_1301126539957307683_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGU-lfh9byL_wDAs6nhMtHSpokIDUtzcdOmiQgNS3Nx00WFwROvozCMxZm8XqBdaguv5jHu5MBtCVgURRVqupAV&_nc_ohc=cEPk3creRFAQ7kNvgHDClKT&_nc_oc=Adn2RgCZLB_VDLtFSoxABN_SXMuDcX5U-gMWg6Coq-t-ykpvnEi7G91oibDZ7dU7MDF33LRYhxCvRvuAX444CJcg&_nc_zt=23&_nc_ht=scontent-gru1-2.xx&_nc_gid=fDu16nY_Jgp3wcjWyebUGA&oh=00_AYFXZKEkqjHx_RQOlESStNXJj9TjQIte97WzvIVIjHnYcQ&oe=67F3C58A');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-section:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.5) 100%);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.hero-content h1 {
-    font-size: 4.5rem;
-    margin-bottom: 25px;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-    animation: fadeInDown 1s ease-out both;
-    color: white;
-    font-weight: 900;
-    line-height: 1.2;
-}
-
-.hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    animation: fadeIn 1.5s ease-out 0.5s both;
-    opacity: 0.9;
-}
-
-.hero-buttons {
-    animation: fadeInUp 1s ease-out 1s both;
-}
-
-.scroll-down {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 2rem;
-    animation: bounce 2s infinite;
-    cursor: pointer;
-    z-index: 10;
-    opacity: 0.8;
-    transition: var(--transition);
-}
-
-.scroll-down:hover {
-    opacity: 1;
-    transform: translateX(-50%) scale(1.1);
-}
-
-.welcome-section {
-    padding: 120px 0;
-    background: linear-gradient(to bottom, var(--very-light-blue) 0%, white 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.welcome-section:before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    left: -100px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-    z-index: 0;
-}
-
-.welcome-section:after {
-    content: '';
-    position: absolute;
-    bottom: -100px;
-    right: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-    z-index: 0;
-}
-
-.welcome-content {
-    position: relative;
-    z-index: 1;
-}
-
-.welcome-img {
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    transform: perspective(1000px) rotateY(-10deg);
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-}
-
-.welcome-img:hover {
-    transform: perspective(1000px) rotateY(0deg);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-}
-
-.welcome-img:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(30, 58, 138, 0.2) 0%, transparent 100%);
-    z-index: 1;
-}
-
-.cultos-section {
-    padding: 120px 0;
-    background-color: white;
-    position: relative;
-    overflow: hidden;
-}
-
-.cultos-section:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b82f6' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.3;
-    z-index: 0;
-}
-
-.culto-card {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: var(--transition);
-    margin-bottom: 30px;
-    height: 100%;
-    padding: 40px 30px;
-    text-align: center;
-    background: white;
-    position: relative;
-    z-index: 1;
-    border-top: 4px solid var(--primary-blue);
-}
-
-.culto-card:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
-}
-
-.culto-icon {
-    font-size: 3.5rem;
-    background: linear-gradient(45deg, var(--primary-blue) 0%, var(--medium-blue) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 25px;
-    transition: var(--transition);
-    display: inline-block;
-}
-
-.culto-card:hover .culto-icon {
-    transform: scale(1.2) rotate(5deg);
-    animation: pulse 1.5s infinite;
-}
-
-.culto-card h3 {
-    margin-bottom: 20px;
-    font-weight: 700;
-    color: var(--primary-blue);
-}
-
-.events-section {
-    padding: 120px 0;
-    background: linear-gradient(to bottom, white 0%, var(--very-light-blue) 100%);
-    position: relative;
-}
-
-.events-section:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%233b82f6"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%233b82f6"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%233b82f6"></path></svg>');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
-
-.event-card {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: var(--transition);
-    margin-bottom: 30px;
-    height: 100%;
-    background: white;
-    position: relative;
-    z-index: 1;
-}
-
-.event-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
-}
-
-.event-img {
-    height: 220px;
-    width: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.event-card:hover .event-img {
-    transform: scale(1.1);
-}
-
-.event-body {
-    padding: 25px;
-    background: white;
-    position: relative;
-}
-
-.event-date {
-    color: var(--primary-blue);
-    font-weight: 700;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.event-date i {
-    margin-right: 8px;
-    color: var(--gold);
-}
-
-.event-card h3 {
-    margin-bottom: 15px;
-    transition: var(--transition);
-}
-
-.event-card:hover h3 {
-    color: var(--medium-blue);
-}
-
-.event-location {
-    display: flex;
-    align-items: center;
-    color: var(--dark);
-    margin-top: 15px;
-}
-
-.event-location i {
-    margin-right: 8px;
-    color: var(--primary-blue);
-}
-
-.gallery-section {
-    padding: 120px 0;
-    background: white;
-    position: relative;
-    overflow: hidden;
-}
-
-.gallery-section:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233b82f6' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-    z-index: 0;
-}
-
-.gallery-img-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: var(--transition);
-    height: 300px;
-}
-
-.gallery-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-    display: block;
-}
-
-.gallery-img-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(30, 58, 138, 0.9) 0%, transparent 100%);
-    color: white;
-    padding: 25px;
-    transform: translateY(100%);
-    transition: var(--transition);
-    z-index: 2;
-}
-
-.gallery-img-container:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, transparent 50%);
-    z-index: 1;
-    transition: var(--transition);
-}
-
-.gallery-img-container:hover:before {
-    background: linear-gradient(to bottom, rgba(30, 58, 138, 0.3) 0%, rgba(30, 58, 138, 0.7) 100%);
-}
-
-.gallery-img-container:hover .gallery-img-info {
-    transform: translateY(0);
-}
-
-.gallery-img-container:hover .gallery-img {
-    transform: scale(1.1);
-}
-
-.gallery-img-container:hover {
-    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
-}
-
-.gallery-img-title {
-    font-weight: 700;
-    margin-bottom: 8px;
-    font-size: 1.3rem;
-    font-family: 'Playfair Display', serif;
-}
-
-.gallery-img-date {
-    font-size: 0.95rem;
-    opacity: 0.9;
-    display: flex;
-    align-items: center;
-}
-
-.gallery-img-date i {
-    margin-right: 8px;
-    color: var(--light-gold);
-}
-
-.pastores-section {
-    padding: 120px 0;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(59, 130, 246, 0.95) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.pastores-section:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    z-index: 0;
-}
-
-.pastores-section .section-title {
-    color: white;
-}
-
-.pastores-section .section-title:after {
-    background: linear-gradient(to right, var(--light-gold), var(--gold));
-}
-
-.pastor-card {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: var(--transition);
-    margin-bottom: 30px;
-    height: 100%;
-    background: white;
-    position: relative;
-    z-index: 1;
-}
-
-.pastor-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-
-.pastor-img {
-    height: 350px;
-    object-fit: cover;
-    transition: var(--transition);
-    width: 100%;
-}
-
-.pastor-card:hover .pastor-img {
-    transform: scale(1.05);
-}
-
-.pastor-body {
-    padding: 30px;
-    text-align: center;
-}
-
-.pastor-name {
-    color: var(--primary-blue);
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.pastor-role {
-    color: var(--gold);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-
-.pastor-social {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.pastor-social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--very-light-blue);
-    color: var(--primary-blue);
-    margin: 0 5px;
-    transition: var(--transition);
-}
-
-.pastor-social a:hover {
-    background: var(--primary-blue);
-    color: white;
-    transform: translateY(-5px);
-}
-
-.contact-section {
-    padding: 120px 0;
-    background: linear-gradient(to bottom, var(--very-light-blue) 0%, white 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.contact-info i {
-    color: var(--primary-blue);
-    width: 24px;
-    text-align: center;
-    transition: var(--transition);
-    font-size: 1.2rem;
-    margin-right: 10px;
-}
-
-.contact-info p {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    transition: var(--transition);
-}
-
-.contact-info p:hover {
-    transform: translateX(5px);
-}
-
-.contact-info p:hover i {
-    transform: scale(1.3);
-    color: var(--medium-blue);
-}
-
-.social-icons {
-    display: flex;
-    margin-top: 30px;
-}
-
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(45deg, var(--primary-blue) 0%, var(--medium-blue) 100%);
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    margin-right: 15px;
-    transition: var(--transition);
-    font-size: 1.2rem;
-    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
-}
-
-.social-icons a:hover {
-    background: linear-gradient(45deg, var(--medium-blue) 0%, var(--light-blue) 100%);
-    color: white;
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
-}
-
-.contact-map {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: var(--transition);
-    height: 100%;
-    min-height: 350px;
-}
-
-.contact-map:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-footer {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--medium-blue) 100%);
-    color: white;
-    padding: 80px 0 30px;
-    position: relative;
-}
-
-footer:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    background: linear-gradient(to right, var(--gold), var(--light-gold));
-}
-
-.footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    color: white;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-}
-
-.footer-logo:hover {
-    color: var(--light-gold);
-    transform: scale(1.05);
-}
-
-.footer-logo i {
-    color: var(--light-gold);
-    margin-right: 15px;
-    font-size: 2rem;
-    transition: var(--transition);
-}
-
-.footer-logo:hover i {
-    transform: rotate(10deg);
-}
-
-.footer-links h4 {
-    color: var(--light-gold);
-    margin-bottom: 25px;
-    font-size: 1.3rem;
-    position: relative;
-    display: inline-block;
-}
-
-.footer-links h4:after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: var(--light-gold);
-    border-radius: 3px;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 12px;
-    transition: var(--transition);
-}
-
-.footer-links li:hover {
-    transform: translateX(8px);
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-}
-
-.footer-links a i {
-    margin-right: 10px;
-    color: var(--light-gold);
-    font-size: 0.8rem;
-    transition: var(--transition);
-}
-
-.footer-links a:hover {
-    color: var(--light-gold);
-    padding-left: 5px;
-}
-
-.footer-links a:hover i {
-    transform: rotate(360deg);
-}
-
-.copyright {
-    border-top: 1px solid rgba(255,255,255,0.2);
-    padding-top: 30px;
-    margin-top: 50px;
-    text-align: center;
-    color: rgba(255,255,255,0.7);
-    font-size: 0.95rem;
-}
-
-/* Efeitos de animação */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0) translateX(-50%);
-    }
-    40% {
-        transform: translateY(-20px) translateX(-50%);
-    }
-    60% {
-        transform: translateY(-10px) translateX(-50%);
-    }
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Formulários */
-.form-control {
-    border: 1px solid var(--light-blue);
-    border-radius: 8px;
-    padding: 15px 20px;
-    transition: var(--transition);
-    margin-bottom: 20px;
-}
-
-.form-control:focus {
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
-    transform: scale(1.02);
-}
-
-textarea.form-control {
-    min-height: 150px;
-}
-
-/* Testemunhos */
-.testimonial-section {
-    padding: 120px 0;
-    background: linear-gradient(to bottom, white 0%, var(--very-light-blue) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.testimonial-card {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: var(--transition);
-    margin: 15px;
-    position: relative;
-}
-
-.testimonial-card:before {
-    content: '"';
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 5rem;
-    font-family: 'Playfair Display', serif;
-    color: rgba(59, 130, 246, 0.1);
-    line-height: 1;
-    z-index: 0;
-}
-
-.testimonial-content {
-    position: relative;
-    z-index: 1;
-}
-
-.testimonial-text {
-    font-style: italic;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-}
-
-.testimonial-author img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-    border: 3px solid var(--light-blue);
-}
-
-.testimonial-name {
-    font-weight: 700;
-    color: var(--primary-blue);
-    margin-bottom: 5px;
-}
-
-.testimonial-role {
-    font-size: 0.9rem;
-    color: var(--dark);
-    opacity: 0.8;
-}
-
-.glide__bullets {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.glide__bullet {
-    width: 12px;
-    height: 12px;
-    background: var(--light-blue);
-    border-radius: 50%;
-    margin: 0 5px;
-    border: none;
-    transition: var(--transition);
-}
-
-.glide__bullet--active {
-    background: var(--primary-blue);
-    transform: scale(1.3);
-}
-
-.glide__bullet:hover {
-    background: var(--medium-blue);
-}
-
-/* Loading spinner */
-.spinner {
-    display: none;
-    width: 50px;
-    height: 50px;
-    margin: 30px auto;
-    border: 5px solid rgba(59, 130, 246, 0.2);
-    border-radius: 50%;
-    border-top: 5px solid var(--primary-blue);
-    animation: spin 1s linear infinite;
-}
-
-/* Modal */
-.modal-content {
-    border-radius: 15px;
-    overflow: hidden;
-    border: none;
-}
-
-.modal-header {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--medium-blue) 100%);
-    color: white;
-    border-bottom: none;
-}
-
-.modal-title {
-    font-weight: 700;
-}
-
-.btn-close {
-    filter: invert(1);
-}
-
-/* Back to top button */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(45deg, var(--primary-blue) 0%, var(--medium-blue) 100%);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    cursor: pointer;
-}
-
-.back-to-top.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.back-to-top:hover {
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
-}
-
-/* Responsividade */
-@media (max-width: 1199.98px) {
-    .hero-content h1 {
-        font-size: 3.8rem;
-    }
-}
-
-@media (max-width: 991.98px) {
-    .hero-content h1 {
-        font-size: 3.2rem;
-    }
-    
-    .section-title {
-        font-size: 2.2rem;
-    }
-    
-    .welcome-img {
-        transform: perspective(1000px) rotateY(0);
-        margin-bottom: 40px;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .hero-section {
-        height: auto;
-        min-height: auto;
-        padding: 150px 0 100px;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-content p {
-        font-size: 1.2rem;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
-    
-    .navbar-brand {
-        font-size: 1.5rem;
-    }
-    
-    .navbar-brand i {
-        font-size: 1.2rem;
-    }
-    
-    .pastor-img {
-        height: 300px;
-    }
-    
-    .footer-logo {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-    }
-    
-    .footer-links {
-        margin-bottom: 30px;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .hero-content p {
-        font-size: 1.1rem;
-    }
-    
-    .btn {
-        padding: 10px 20px;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .gallery-img-container {
-        height: 250px;
-    }
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Top Bar/Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-bible"></i>Cordeiro Santo
+                <img src="https://i.imgur.com/PT8MO38.png" alt="Cordeiro Santo" class="logo">
+                Cordeiro Santo
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -1237,19 +64,20 @@ textarea.form-control {
 
     <!-- Hero Section -->
     <section id="home" class="hero-section">
-        <div class="hero-content container">
+        <div class="hero-content container" style="left: 6vh;">
             <h1 class="animate__animated animate__fadeInDown">Ministério Cordeiro Santo</h1>
-            <p class="animate__animated animate__fadeIn animate__delay-1s">Levando a Palavra de Deus com amor e dedicação desde 2015</p>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Levando a Palavra de Deus com amor e
+                dedicação desde 2015</p>
             <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-1s">
-                <a href="#cultos" class="btn btn-outline-light btn-lg me-3">
+                <a href="#cultos" class="btn btn-outline-light btn-lg" style="margin: 10px;">
                     <i class="fas fa-clock me-2"></i>Horários
                 </a>
-                <a href="#contact" class="btn btn-primary btn-lg">
+                <a href="#contact" class="btn btn-primary-white btn-lg" style="margin: 10px;">
                     <i class="fas fa-map-marker-alt me-2"></i>Visite-nos
                 </a>
             </div>
         </div>
-        
+
         <div class="scroll-down">
             <i class="fas fa-chevron-down"></i>
         </div>
@@ -1261,11 +89,16 @@ textarea.form-control {
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <h2 class="section-title" data-aos="fade-up">Bem-vindo à Cordeiro Santo</h2>
-                    <p class="lead" data-aos="fade-up" data-aos-delay="100">Uma igreja onde você e sua família são acolhidos com amor</p>
-                    <p data-aos="fade-up" data-aos-delay="150">O Ministério Cordeiro Santo tem como missão levar a Palavra de Deus a todos, oferecendo um ambiente de adoração, comunhão e crescimento espiritual. Desde 2015, temos sido uma bênção na vida de muitas famílias, ajudando-as a conhecer e seguir os ensinamentos de Cristo.</p>
-                    <p data-aos="fade-up" data-aos-delay="200">Nossa doutrina é baseada na Bíblia Sagrada, e cremos no poder transformador do Evangelho. Venha nos visitar e faça parte desta família abençoada!</p>
-                    <div data-aos="fade-up" data-aos-delay="250">
-                        <a href="#cultos" class="btn btn-primary mt-3 me-2">
+                    <p class="lead" data-aos="fade-up" data-aos-delay="100">Uma igreja onde você e sua família são
+                        acolhidos com amor</p>
+                    <p data-aos="fade-up" data-aos-delay="150">O Ministério Cordeiro Santo tem como missão levar a
+                        Palavra de Deus a todos, oferecendo um ambiente de adoração, comunhão e crescimento espiritual.
+                        Desde 2015, temos sido uma bênção na vida de muitas famílias, ajudando-as a conhecer e seguir os
+                        ensinamentos de Cristo.</p>
+                    <p data-aos="fade-up" data-aos-delay="200">Nossa doutrina é baseada na Bíblia Sagrada, e cremos no
+                        poder transformador do Evangelho. Venha nos visitar e faça parte desta família abençoada!</p>
+                    <div data-aos="fade-up" data-aos-delay="250" style="display: grid;">
+                        <a href="#cultos" class="btn btn-primary mt-3">
                             <i class="fas fa-clock me-2"></i>Horários
                         </a>
                         <a href="#pastores" class="btn btn-outline-primary mt-3">
@@ -1274,7 +107,8 @@ textarea.form-control {
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
-                    <img src="https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/481770501_1054285880067669_3309176919720297080_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEAZtFzbvAHwZY0MCO6Dhot2JG6sNNSjEbYkbqw01KMRpYyAp8JVmLbVdsNqtv4fQGvP3H7_4Wov56S6VhU_6aZ&_nc_ohc=E2JhyZMOB2EQ7kNvgFn1g3d&_nc_oc=Admux5xtPQL7O9tQgkRoXZ_Ac-F_ja1zMlvdj6bpZ_53WztJpJIAZ4hX-r73NqkrK_MM4SYMwXRkzs9fPPqKANrt&_nc_zt=23&_nc_ht=scontent-gru1-2.xx&_nc_gid=J05c8tjVPM3G10lqNk9EYQ&oh=00_AYGYNtpilGOgoeXB3TSgai5jlACx7ROZccZEjqdwFW1sLQ&oe=67F3CB41" alt="Igreja Cordeiro Santo" class="img-fluid rounded shadow-lg welcome-img">
+                    <img src="https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/481770501_1054285880067669_3309176919720297080_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEAZtFzbvAHwZY0MCO6Dhot2JG6sNNSjEbYkbqw01KMRpYyAp8JVmLbVdsNqtv4fQGvP3H7_4Wov56S6VhU_6aZ&_nc_ohc=E2JhyZMOB2EQ7kNvgFn1g3d&_nc_oc=Admux5xtPQL7O9tQgkRoXZ_Ac-F_ja1zMlvdj6bpZ_53WztJpJIAZ4hX-r73NqkrK_MM4SYMwXRkzs9fPPqKANrt&_nc_zt=23&_nc_ht=scontent-gru1-2.xx&_nc_gid=J05c8tjVPM3G10lqNk9EYQ&oh=00_AYGYNtpilGOgoeXB3TSgai5jlACx7ROZccZEjqdwFW1sLQ&oe=67F3CB41"
+                        alt="Igreja Cordeiro Santo" class="img-fluid rounded shadow-lg welcome-img">
                 </div>
             </div>
         </div>
@@ -1284,19 +118,20 @@ textarea.form-control {
     <section id="cultos" class="cultos-section">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Nossos Cultos</h2>
-            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Participe dos nossos cultos e seja abençoado</p>
-            
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Participe dos nossos cultos e seja
+                abençoado</p>
+
             <div class="row" id="cultos-container" data-aos="fade-up" data-aos-delay="200">
                 <!-- Cultos serão carregados dinamicamente aqui -->
                 <div class="col-md-6 col-lg-4">
                     <div class="culto-card">
                         <div class="culto-icon">
-                            <i class="fas fa-church"></i>
+                            <i class="fas fa-users"></i>
                         </div>
-                        <h3>Culto de Domingo</h3>
+                        <h3>Culto da Família</h3>
                         <p><strong>Domingo</strong></p>
                         <p>19:00 - 21:30</p>
-                        <p class="mt-3">Momento de adoração e palavra para toda a família</p>
+                        <p class="mt-3">Momento de adoração e pregação da Palavra para toda a família</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
@@ -1304,10 +139,10 @@ textarea.form-control {
                         <div class="culto-icon">
                             <i class="fas fa-praying-hands"></i>
                         </div>
-                        <h3>Culto de Oração</h3>
+                        <h3>Círculo de Oração</h3>
                         <p><strong>Terça-feira</strong></p>
                         <p>19:00 - 20:00</p>
-                        <p class="mt-3">Momento de intercessão e busca por avivamento</p>
+                        <p class="mt-3">Encontro de intercessão e oração pela igreja e suas necessidades</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
@@ -1315,32 +150,33 @@ textarea.form-control {
                         <div class="culto-icon">
                             <i class="fas fa-bible"></i>
                         </div>
-                        <h3>Estudo Bíblico</h3>
+                        <h3>Culto da Bênção e da Vitória</h3>
                         <p><strong>Quarta-feira</strong></p>
-                        <p>19:00 - 20:30</p>
-                        <p class="mt-3">Estudo aprofundado da Palavra de Deus</p>
+                        <p>19:00 - 21:30</p>
+                        <p class="mt-3">Culto com ministrações voltadas para bênçãos e vitórias na vida dos
+                            participantes</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="culto-card">
                         <div class="culto-icon">
-                            <i class="fas fa-hands-praying"></i>
+                            <i class="fas fa-dove"></i>
                         </div>
-                        <h3>Culto de Libertação</h3>
+                        <h3>Culto da Libertação</h3>
                         <p><strong>Sexta-feira</strong></p>
-                        <p>14:00 - 16:00</p>
-                        <p class="mt-3">Momento de libertação e cura interior</p>
+                        <p>14:00 - 16:30</p>
+                        <p class="mt-3">Momento de busca por cura e libertação espiritual</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="culto-card">
                         <div class="culto-icon">
-                            <i class="fas fa-fire"></i>
+                            <i class="fas fa-dove"></i>
                         </div>
-                        <h3>Culto de Avivamento</h3>
+                        <h3>Culto da Libertação</h3>
                         <p><strong>Sexta-feira</strong></p>
-                        <p>19:00 - 21:00</p>
-                        <p class="mt-3">Culto de avivamento e batismo no Espírito Santo</p>
+                        <p>19:00 - 21:30</p>
+                        <p class="mt-3">Momento de busca por cura e libertação espiritual</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
@@ -1348,13 +184,14 @@ textarea.form-control {
                         <div class="culto-icon">
                             <i class="fas fa-music"></i>
                         </div>
-                        <h3>Culto Jovem</h3>
+                        <h3>Encontro de Jovens</h3>
                         <p><strong>Sábado</strong></p>
                         <p>19:00 - 21:00</p>
-                        <p class="mt-3">Louvor, palavra e comunhão para os jovens</p>
+                        <p class="mt-3">Culto voltado para a juventude com mensagem, louvor e comunhão</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -1362,52 +199,17 @@ textarea.form-control {
     <section id="events" class="events-section">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Próximos Eventos</h2>
-            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Participe dos nossos eventos e fortaleça sua fé</p>
-            
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Participe dos nossos eventos e fortaleça
+                sua fé</p>
+
             <div class="row" id="events-container" data-aos="fade-up" data-aos-delay="200">
                 <!-- Eventos serão carregados dinamicamente aqui -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4" class="event-img" alt="Retiro Espiritual">
-                        <div class="event-body">
-                            <span class="event-date"><i class="far fa-calendar-alt me-2"></i>15 de Junho, 2025 - 08:00</span>
-                            <h3>Retiro Espiritual</h3>
-                            <p>Um fim de semana de renovação espiritual com palestras, louvor e comunhão.</p>
-                            <div class="event-location">
-                                <i class="fas fa-map-marker-alt me-2"></i>Sítio Vale da Bênção
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8" class="event-img" alt="Conferência de Mulheres">
-                        <div class="event-body">
-                            <span class="event-date"><i class="far fa-calendar-alt me-2"></i>22 de Junho, 2025 - 19:00</span>
-                            <h3>Conferência de Mulheres</h3>
-                            <p>Encontro especial para mulheres com palestras, workshops e momentos de adoração.</p>
-                            <div class="event-location">
-                                <i class="fas fa-map-marker-alt me-2"></i>Sede da Igreja
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8" class="event-img" alt="Acampamento Jovem">
-                        <div class="event-body">
-                            <span class="event-date"><i class="far fa-calendar-alt me-2"></i>05 de Julho, 2025 - 14:00</span>
-                            <h3>Acampamento Jovem</h3>
-                            <p>Acampamento para jovens com esportes, louvor, palavra e muita diversão.</p>
-                            <div class="event-location">
-                                <i class="fas fa-map-marker-alt me-2"></i>Acampamento Monte Sinai
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-12 text-center">
+                    <div class="spinner"></div>
                 </div>
             </div>
-            
-            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="300">
+
+            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="300" style="padding-bottom: 60px;">
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#eventsModal">
                     Ver Todos os Eventos
                 </button>
@@ -1419,65 +221,16 @@ textarea.form-control {
     <section id="gallery" class="gallery-section">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Nossos Momentos</h2>
-            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Registros dos cultos e eventos da nossa igreja</p>
-            
-            <div class="row">
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="gallery-img-container">
-                        <img src="https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/485693308_1064473552382235_6469138858371959013_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFK64dMzd0TlaF-CjjMzym5n0u4Q8Km9f-fS7hDwqb1_9ly5JnQ0QJj04g3bJA1PoQFFdh6EGkRRrQZrhOkiYkI&_nc_ohc=6csVwJ-BnpIQ7kNvgHVeQzS&_nc_oc=AdkFWbtQO1GR3lf855OlF-FoaaLzQ3P1ppCCdraEKF7q5HYExTm-8pAbrSSaYYYLuiINYd2eVdUoMyQ17DMiBmtI&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=Yv-1SwS7ssmvKWlDhh20iA&oh=00_AYG1wyoBB--YIp6Tg1kqXMnVaEvOwN5HjNi0__sLy3izpg&oe=67F3B707" class="img-fluid rounded gallery-img" alt="Culto de Adoração">
-                        <div class="gallery-img-info">
-                            <div class="gallery-img-title">Culto de Adoração</div>
-                            <div class="gallery-img-date"><i class="far fa-calendar-alt me-2"></i>15 de Janeiro, 2023</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="gallery-img-container">
-                        <img src="https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/485693308_1064473552382235_6469138858371959013_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFK64dMzd0TlaF-CjjMzym5n0u4Q8Km9f-fS7hDwqb1_9ly5JnQ0QJj04g3bJA1PoQFFdh6EGkRRrQZrhOkiYkI&_nc_ohc=6csVwJ-BnpIQ7kNvgHVeQzS&_nc_oc=AdkFWbtQO1GR3lf855OlF-FoaaLzQ3P1ppCCdraEKF7q5HYExTm-8pAbrSSaYYYLuiINYd2eVdUoMyQ17DMiBmtI&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=Yv-1SwS7ssmvKWlDhh20iA&oh=00_AYG1wyoBB--YIp6Tg1kqXMnVaEvOwN5HjNi0__sLy3izpg&oe=67F3B707" class="img-fluid rounded gallery-img" alt="Batismo">
-                        <div class="gallery-img-info">
-                            <div class="gallery-img-title">Batismo</div>
-                            <div class="gallery-img-date"><i class="far fa-calendar-alt me-2"></i>22 de Fevereiro, 2023</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="gallery-img-container">
-                        <img src="https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/485693308_1064473552382235_6469138858371959013_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFK64dMzd0TlaF-CjjMzym5n0u4Q8Km9f-fS7hDwqb1_9ly5JnQ0QJj04g3bJA1PoQFFdh6EGkRRrQZrhOkiYkI&_nc_ohc=6csVwJ-BnpIQ7kNvgHVeQzS&_nc_oc=AdkFWbtQO1GR3lf855OlF-FoaaLzQ3P1ppCCdraEKF7q5HYExTm-8pAbrSSaYYYLuiINYd2eVdUoMyQ17DMiBmtI&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=Yv-1SwS7ssmvKWlDhh20iA&oh=00_AYG1wyoBB--YIp6Tg1kqXMnVaEvOwN5HjNi0__sLy3izpg&oe=67F3B707" class="img-fluid rounded gallery-img" alt="Louvor">
-                        <div class="gallery-img-info">
-                            <div class="gallery-img-title">Noite de Louvor</div>
-                            <div class="gallery-img-date"><i class="far fa-calendar-alt me-2"></i>10 de Março, 2023</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="gallery-img-container">
-                        <img src="https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/485693308_1064473552382235_6469138858371959013_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFK64dMzd0TlaF-CjjMzym5n0u4Q8Km9f-fS7hDwqb1_9ly5JnQ0QJj04g3bJA1PoQFFdh6EGkRRrQZrhOkiYkI&_nc_ohc=6csVwJ-BnpIQ7kNvgHVeQzS&_nc_oc=AdkFWbtQO1GR3lf855OlF-FoaaLzQ3P1ppCCdraEKF7q5HYExTm-8pAbrSSaYYYLuiINYd2eVdUoMyQ17DMiBmtI&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=Yv-1SwS7ssmvKWlDhh20iA&oh=00_AYG1wyoBB--YIp6Tg1kqXMnVaEvOwN5HjNi0__sLy3izpg&oe=67F3B707" class="img-fluid rounded gallery-img" alt="Crianças">
-                        <div class="gallery-img-info">
-                            <div class="gallery-img-title">Escola Bíblica Infantil</div>
-                            <div class="gallery-img-date"><i class="far fa-calendar-alt me-2"></i>05 de Abril, 2023</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="gallery-img-container">
-                        <img src="https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/485693308_1064473552382235_6469138858371959013_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFK64dMzd0TlaF-CjjMzym5n0u4Q8Km9f-fS7hDwqb1_9ly5JnQ0QJj04g3bJA1PoQFFdh6EGkRRrQZrhOkiYkI&_nc_ohc=6csVwJ-BnpIQ7kNvgHVeQzS&_nc_oc=AdkFWbtQO1GR3lf855OlF-FoaaLzQ3P1ppCCdraEKF7q5HYExTm-8pAbrSSaYYYLuiINYd2eVdUoMyQ17DMiBmtI&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=Yv-1SwS7ssmvKWlDhh20iA&oh=00_AYG1wyoBB--YIp6Tg1kqXMnVaEvOwN5HjNi0__sLy3izpg&oe=67F3B707" class="img-fluid rounded gallery-img" alt="Retiro">
-                        <div class="gallery-img-info">
-                            <div class="gallery-img-title">Retiro Espiritual</div>
-                            <div class="gallery-img-date"><i class="far fa-calendar-alt me-2"></i>15 de Maio, 2023</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="gallery-img-container">
-                        <img src="https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/485693308_1064473552382235_6469138858371959013_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFK64dMzd0TlaF-CjjMzym5n0u4Q8Km9f-fS7hDwqb1_9ly5JnQ0QJj04g3bJA1PoQFFdh6EGkRRrQZrhOkiYkI&_nc_ohc=6csVwJ-BnpIQ7kNvgHVeQzS&_nc_oc=AdkFWbtQO1GR3lf855OlF-FoaaLzQ3P1ppCCdraEKF7q5HYExTm-8pAbrSSaYYYLuiINYd2eVdUoMyQ17DMiBmtI&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=Yv-1SwS7ssmvKWlDhh20iA&oh=00_AYG1wyoBB--YIp6Tg1kqXMnVaEvOwN5HjNi0__sLy3izpg&oe=67F3B707" class="img-fluid rounded gallery-img" alt="Conferência">
-                        <div class="gallery-img-info">
-                            <div class="gallery-img-title">Conferência de Mulheres</div>
-                            <div class="gallery-img-date"><i class="far fa-calendar-alt me-2"></i>22 de Junho, 2023</div>
-                        </div>
-                    </div>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Registros dos cultos e eventos da nossa
+                igreja</p>
+
+            <div class="row" id="gallery-container">
+                <!-- Galeria será carregada dinamicamente aqui -->
+                <div class="col-12 text-center">
+                    <div class="spinner"></div>
                 </div>
             </div>
-            
+
             <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="500">
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#galleryModal">
                     Ver Mais Fotos
@@ -1491,58 +244,12 @@ textarea.form-control {
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Depoimentos</h2>
             <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">O que as pessoas dizem sobre nós</p>
-            
+
             <div class="glide" data-aos="fade-up" data-aos-delay="200">
                 <div class="glide__track" data-glide-el="track">
-                    <ul class="glide__slides">
-                        <li class="glide__slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-content">
-                                    <div class="testimonial-text">
-                                        <p>A Cordeiro Santo mudou minha vida. Encontrei paz e propósito através da palavra pregada aqui. Minha família foi restaurada e hoje vivemos uma vida abençoada.</p>
-                                    </div>
-                                    <div class="testimonial-author">
-                                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Maria Silva">
-                                        <div>
-                                            <div class="testimonial-name">Maria Silva</div>
-                                            <div class="testimonial-role">Membro desde 2018</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-content">
-                                    <div class="testimonial-text">
-                                        <p>Quando cheguei aqui estava perdido e sem esperança. Hoje, graças a Deus e ao acolhimento desta igreja, sou uma nova criatura. Recomendo a todos que buscam um encontro verdadeiro com Deus.</p>
-                                    </div>
-                                    <div class="testimonial-author">
-                                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="João Santos">
-                                        <div>
-                                            <div class="testimonial-name">João Santos</div>
-                                            <div class="testimonial-role">Membro desde 2020</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="testimonial-card">
-                                <div class="testimonial-content">
-                                    <div class="testimonial-text">
-                                        <p>Meus filhos cresceram nesta igreja e vejo como a palavra de Deus os tem guiado. A Cordeiro Santo é mais que uma igreja, é uma família que nos acolheu e nos ajudou nos momentos mais difíceis.</p>
-                                    </div>
-                                    <div class="testimonial-author">
-                                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana Oliveira">
-                                        <div>
-                                            <div class="testimonial-name">Ana Oliveira</div>
-                                            <div class="testimonial-role">Membro desde 2016</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                    <ul class="glide__slides" id="testimonials-container">
+                        <!-- Depoimentos serão carregados dinamicamente aqui -->
+                        <div class="spinner"></div>
                     </ul>
                 </div>
                 <div class="glide__bullets" data-glide-el="controls[nav]">
@@ -1558,10 +265,14 @@ textarea.form-control {
     <section id="pastores" class="pastores-section">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Nossos Pastores</h2>
-            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100" style="color: #fff;">Conheça nossa equipe pastoral</p>
-            
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100" style="color: #fff;">Conheça nossa
+                equipe pastoral</p>
+
             <div class="row" id="pastores-container" data-aos="fade-up" data-aos-delay="200">
                 <!-- Pastores serão carregados dinamicamente aqui -->
+                <div class="col-12 text-center">
+                    <div class="spinner"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -1573,23 +284,27 @@ textarea.form-control {
                 <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-up">
                     <h2 class="section-title">Entre em Contato</h2>
                     <p>Estamos à disposição para responder suas dúvidas e orar por você.</p>
-                    
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Rua Possídio Salomoni, 782 - Cristo Rei, Pato Branco/PR</p>
-                        <p><i class="fas fa-phone"></i> (46) 99146-4560 - (46) 99123-5131</p>
-                        <p><i class="fas fa-envelope"></i> cordeirosanto@gmail.com</p>
+
+                    <div class="contact-info" id="contact-info-container">
+                        <!-- Informações de contato serão carregadas dinamicamente aqui -->
+                        <div class="spinner"></div>
                     </div>
-                    
+
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/Minsteriocordeirosantopb" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/ministeriocordeirosantopb/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@cordeirosanto6068" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/Minsteriocordeirosantopb" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/ministeriocordeirosantopb/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@cordeirosanto6068" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
                         <a href="https://wa.me/5546991235131" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="contact-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3553.038051732577!2d-52.673911684388!3d-26.23067898337889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e5530fd6d0711d%3A0x3a0e2b5a5e9e5b1f!2sR.%20Poss%C3%ADdio%20Salomone%2C%20782%20-%20Cristo%20Rei%2C%20Pato%20Branco%20-%20PR%2C%2085506-320!5e0!3m2!1spt-BR!2sbr!4v1629839208254!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3553.038051732577!2d-52.673911684388!3d-26.23067898337889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e5530fd6d0711d%3A0x3a0e2b5a5e9e5b1f!2sR.%20Poss%C3%ADdio%20Salomone%2C%20782%20-%20Cristo%20Rei%2C%20Pato%20Branco%20-%20PR%2C%2085506-320!5e0!3m2!1spt-BR!2sbr!4v1629839208254!5m2!1spt-BR!2sbr"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -1602,13 +317,18 @@ textarea.form-control {
             <div class="row">
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <div class="footer-logo">
-                        <i class="fas fa-bible"></i>Cordeiro Santo
+                        <img src="https://i.imgur.com/PT8MO38.png" alt="Cordeiro Santo" class="logo">
+                        Cordeiro Santo
                     </div>
-                    <p>Uma igreja comprometida com a Palavra de Deus e o bem-estar espiritual da comunidade desde 2015.</p>
+                    <p>Uma igreja comprometida com a Palavra de Deus e o bem-estar espiritual da comunidade desde 2015.
+                    </p>
                     <div class="social-icons mt-4">
-                        <a href="https://www.facebook.com/Minsteriocordeirosantopb" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/ministeriocordeirosantopb/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@cordeirosanto6068" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/Minsteriocordeirosantopb" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/ministeriocordeirosantopb/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@cordeirosanto6068" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
                         <a href="https://wa.me/5546991235131" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
@@ -1659,7 +379,7 @@ textarea.form-control {
                 </div>
                 <div class="modal-body">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table" id="events-table">
                             <thead>
                                 <tr>
                                     <th>Data</th>
@@ -1669,30 +389,8 @@ textarea.form-control {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>15/06/2025</td>
-                                    <td>Retiro Espiritual</td>
-                                    <td>Sítio Vale da Bênção</td>
-                                    <td><button class="btn btn-sm btn-primary">Mais Info</button></td>
-                                </tr>
-                                <tr>
-                                    <td>22/06/2025</td>
-                                    <td>Conferência de Mulheres</td>
-                                    <td>Sede da Igreja</td>
-                                    <td><button class="btn btn-sm btn-primary">Mais Info</button></td>
-                                </tr>
-                                <tr>
-                                    <td>05/07/2025</td>
-                                    <td>Acampamento Jovem</td>
-                                    <td>Acampamento Monte Sinai</td>
-                                    <td><button class="btn btn-sm btn-primary">Mais Info</button></td>
-                                </tr>
-                                <tr>
-                                    <td>20/07/2025</td>
-                                    <td>Batismo</td>
-                                    <td>Sede da Igreja</td>
-                                    <td><button class="btn btn-sm btn-primary">Mais Info</button></td>
-                                </tr>
+                                <!-- Eventos serão carregados dinamicamente aqui -->
+                                <div class="spinner"></div>
                             </tbody>
                         </table>
                     </div>
@@ -1713,24 +411,10 @@ textarea.form-control {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <img src="https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/485693308_1064473552382235_6469138858371959013_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFK64dMzd0TlaF-CjjMzym5n0u4Q8Km9f-fS7hDwqb1_9ly5JnQ0QJj04g3bJA1PoQFFdh6EGkRRrQZrhOkiYkI&_nc_ohc=6csVwJ-BnpIQ7kNvgHVeQzS&_nc_oc=AdkFWbtQO1GR3lf855OlF-FoaaLzQ3P1ppCCdraEKF7q5HYExTm-8pAbrSSaYYYLuiINYd2eVdUoMyQ17DMiBmtI&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=Yv-1SwS7ssmvKWlDhh20iA&oh=00_AYG1wyoBB--YIp6Tg1kqXMnVaEvOwN5HjNi0__sLy3izpg&oe=67F3B707" class="img-fluid rounded" alt="Evento 1">
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/485693308_1064473552382235_6469138858371959013_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFK64dMzd0TlaF-CjjMzym5n0u4Q8Km9f-fS7hDwqb1_9ly5JnQ0QJj04g3bJA1PoQFFdh6EGkRRrQZrhOkiYkI&_nc_ohc=6csVwJ-BnpIQ7kNvgHVeQzS&_nc_oc=AdkFWbtQO1GR3lf855OlF-FoaaLzQ3P1ppCCdraEKF7q5HYExTm-8pAbrSSaYYYLuiINYd2eVdUoMyQ17DMiBmtI&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=Yv-1SwS7ssmvKWlDhh20iA&oh=00_AYG1wyoBB--YIp6Tg1kqXMnVaEvOwN5HjNi0__sLy3izpg&oe=67F3B707" class="img-fluid rounded" alt="Evento 2">
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/485693308_1064473552382235_6469138858371959013_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFK64dMzd0TlaF-CjjMzym5n0u4Q8Km9f-fS7hDwqb1_9ly5JnQ0QJj04g3bJA1PoQFFdh6EGkRRrQZrhOkiYkI&_nc_ohc=6csVwJ-BnpIQ7kNvgHVeQzS&_nc_oc=AdkFWbtQO1GR3lf855OlF-FoaaLzQ3P1ppCCdraEKF7q5HYExTm-8pAbrSSaYYYLuiINYd2eVdUoMyQ17DMiBmtI&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=Yv-1SwS7ssmvKWlDhh20iA&oh=00_AYG1wyoBB--YIp6Tg1kqXMnVaEvOwN5HjNi0__sLy3izpg&oe=67F3B707" class="img-fluid rounded" alt="Evento 3">
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/485693308_1064473552382235_6469138858371959013_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFK64dMzd0TlaF-CjjMzym5n0u4Q8Km9f-fS7hDwqb1_9ly5JnQ0QJj04g3bJA1PoQFFdh6EGkRRrQZrhOkiYkI&_nc_ohc=6csVwJ-BnpIQ7kNvgHVeQzS&_nc_oc=AdkFWbtQO1GR3lf855OlF-FoaaLzQ3P1ppCCdraEKF7q5HYExTm-8pAbrSSaYYYLuiINYd2eVdUoMyQ17DMiBmtI&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=Yv-1SwS7ssmvKWlDhh20iA&oh=00_AYG1wyoBB--YIp6Tg1kqXMnVaEvOwN5HjNi0__sLy3izpg&oe=67F3B707" class="img-fluid rounded" alt="Evento 4">
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/485693308_1064473552382235_6469138858371959013_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFK64dMzd0TlaF-CjjMzym5n0u4Q8Km9f-fS7hDwqb1_9ly5JnQ0QJj04g3bJA1PoQFFdh6EGkRRrQZrhOkiYkI&_nc_ohc=6csVwJ-BnpIQ7kNvgHVeQzS&_nc_oc=AdkFWbtQO1GR3lf855OlF-FoaaLzQ3P1ppCCdraEKF7q5HYExTm-8pAbrSSaYYYLuiINYd2eVdUoMyQ17DMiBmtI&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=Yv-1SwS7ssmvKWlDhh20iA&oh=00_AYG1wyoBB--YIp6Tg1kqXMnVaEvOwN5HjNi0__sLy3izpg&oe=67F3B707" class="img-fluid rounded" alt="Evento 5">
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/485693308_1064473552382235_6469138858371959013_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFK64dMzd0TlaF-CjjMzym5n0u4Q8Km9f-fS7hDwqb1_9ly5JnQ0QJj04g3bJA1PoQFFdh6EGkRRrQZrhOkiYkI&_nc_ohc=6csVwJ-BnpIQ7kNvgHVeQzS&_nc_oc=AdkFWbtQO1GR3lf855OlF-FoaaLzQ3P1ppCCdraEKF7q5HYExTm-8pAbrSSaYYYLuiINYd2eVdUoMyQ17DMiBmtI&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=Yv-1SwS7ssmvKWlDhh20iA&oh=00_AYG1wyoBB--YIp6Tg1kqXMnVaEvOwN5HjNi0__sLy3izpg&oe=67F3B707" class="img-fluid rounded" alt="Evento 6">
+                    <div class="row" id="gallery-modal-container">
+                        <!-- Galeria será carregada dinamicamente aqui -->
+                        <div class="col-12 text-center">
+                            <div class="spinner"></div>
                         </div>
                     </div>
                 </div>
@@ -1750,341 +434,7 @@ textarea.form-control {
     <!-- Glide.js JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.5.0/glide.min.js"></script>
     <!-- Script principal -->
-    <script>
-        // Configuração do Supabase
-        const SUPABASE_URL = 'https://phxvwxnvpxuqmewonius.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBoeHZ3eG52cHh1cW1ld29uaXVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM2MzM4NTQsImV4cCI6MjA1OTIwOTg1NH0.vhuck8D8qrxxHVS4X_wnGXmjFUjU1HCwx2STBxRVoM0';
-
-        // Função para inicializar o Supabase
-        async function initSupabase() {
-            try {
-                // Cria o cliente Supabase
-                const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-                
-                // Testa a conexão
-                const { data, error } = await supabaseClient
-                    .from('cultos')
-                    .select('*')
-                    .limit(1);
-                
-                if (error) throw error;
-                
-                return supabaseClient;
-            } catch (error) {
-                console.error('Erro ao conectar com Supabase:', error);
-                throw error;
-            }
-        }
-
-        // Inicializa o carrossel de depoimentos
-        function initTestimonials() {
-            new Glide('.glide', {
-                type: 'carousel',
-                perView: 1,
-                autoplay: 4000,
-                hoverpause: true,
-                gap: 30,
-                breakpoints: {
-                    768: {
-                        perView: 1
-                    }
-                }
-            }).mount();
-        }
-
-        // Função para animar as seções ao rolar
-        function animateOnScroll() {
-            AOS.init({
-                duration: 800,
-                once: true,
-                easing: 'ease-in-out'
-            });
-
-            // Adiciona efeito de scroll na navbar
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    document.querySelector('.navbar').classList.add('scrolled');
-                } else {
-                    document.querySelector('.navbar').classList.remove('scrolled');
-                }
-
-                // Mostra/oculta o botão de voltar ao topo
-                if (window.scrollY > 300) {
-                    document.querySelector('.back-to-top').classList.add('active');
-                } else {
-                    document.querySelector('.back-to-top').classList.remove('active');
-                }
-            });
-
-            // Rolagem suave para links internos
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-
-                        // Fecha o menu mobile se estiver aberto
-                        const navbarCollapse = document.querySelector('.navbar-collapse');
-                        if (navbarCollapse.classList.contains('show')) {
-                            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-                            bsCollapse.hide();
-                        }
-                    }
-                });
-            });
-
-            // Botão de voltar ao topo
-            document.querySelector('.back-to-top').addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Botão de scroll down
-            document.querySelector('.scroll-down').addEventListener('click', function() {
-                window.scrollTo({
-                    top: document.querySelector('#about').offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Ativa o link ativo na navegação
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            window.addEventListener('scroll', function() {
-                let current = '';
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    
-                    if (pageYOffset >= (sectionTop - 150)) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-        }
-
-        // Função para criar partículas flutuantes
-        function createParticles() {
-            const particlesContainer = document.querySelector('.hero-section');
-            const particleCount = 20;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Tamanho aleatório entre 2px e 8px
-                const size = Math.random() * 6 + 2;
-                
-                // Posição aleatória
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                
-                // Opacidade aleatória
-                const opacity = Math.random() * 0.5 + 0.1;
-                
-                // Tempo de animação aleatório
-                const duration = Math.random() * 10 + 5;
-                const delay = Math.random() * 5;
-                
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${posX}%`;
-                particle.style.top = `${posY}%`;
-                particle.style.opacity = opacity;
-                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-
-        // Função para preencher os cultos
-        async function fillCultos(supabaseClient) {
-            try {
-                // Busca todos os cultos
-                const { data: cultos, error } = await supabaseClient
-                    .from('cultos')
-                    .select('*')
-                    .order('id', { ascending: true });
-
-                if (error) throw error;
-
-                if (!cultos || cultos.length === 0) {
-                    console.log('Nenhum culto encontrado no banco de dados');
-                    return;
-                }
-
-                const container = document.getElementById('cultos-container');
-                container.innerHTML = '';
-
-                cultos.forEach(culto => {
-                    const col = document.createElement('div');
-                    col.className = 'col-md-6 col-lg-4';
-                    
-                    col.innerHTML = `
-                        <div class="culto-card">
-                            <div class="culto-icon">
-                                <i class="fas fa-church"></i>
-                            </div>
-                            <h3>${culto.nome}</h3>
-                            <p><strong>${culto.dia_semana}</strong></p>
-                            <p>${culto.horario_inicio} - ${culto.horario_fim}</p>
-                            <p class="mt-3">${culto.descricao || 'Momento de adoração e palavra'}</p>
-                        </div>`;
-                    
-                    container.appendChild(col);
-                });
-
-            } catch (error) {
-                console.error('Erro ao carregar os cultos:', error);
-            }
-        }
-
-        // Função para preencher os eventos
-        async function fillEvents(supabaseClient) {
-            try {
-                // Busca todos os eventos (após a data atual)
-                const { data: eventos, error } = await supabaseClient
-                    .from('eventos')
-                    .select('*')
-                    .gte('data_evento', new Date().toISOString())
-                    .order('data_evento', { ascending: true });
-
-                if (error) throw error;
-
-                if (!eventos || eventos.length === 0) {
-                    console.log('Nenhum evento futuro encontrado no banco de dados');
-                    return;
-                }
-
-                const container = document.getElementById('events-container');
-                container.innerHTML = '';
-
-                eventos.forEach(evento => {
-                    const col = document.createElement('div');
-                    col.className = 'col-md-6 col-lg-4';
-                    
-                    const eventDate = new Date(evento.data_evento);
-                    const options = { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' };
-                    const formattedDate = eventDate.toLocaleDateString('pt-BR', options);
-                    
-                    col.innerHTML = `
-                        <div class="event-card">
-                            <img src="${evento.imagem_url || 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4'}" class="event-img" alt="${evento.titulo}">
-                            <div class="event-body">
-                                <span class="event-date"><i class="far fa-calendar-alt me-2"></i>${formattedDate}</span>
-                                <h3>${evento.titulo}</h3>
-                                <p>${evento.descricao || 'Evento especial da igreja'}</p>
-                                <div class="event-location">
-                                    <i class="fas fa-map-marker-alt me-2"></i>${evento.local || 'Sede da Igreja'}
-                                </div>
-                            </div>
-                        </div>`;
-                    
-                    container.appendChild(col);
-                });
-
-            } catch (error) {
-                console.error('Erro ao carregar os eventos:', error);
-            }
-        }
-
-        // Função para preencher os pastores
-        async function fillPastores(supabaseClient) {
-            try {
-                // Busca todos os contatos (pastores/obreiros)
-                const { data: pastores, error } = await supabaseClient
-                    .from('contatos')
-                    .select('*')
-                    .order('id', { ascending: true });
-
-                if (error) throw error;
-
-                if (!pastores || pastores.length === 0) {
-                    console.log('Nenhum pastor/obreiro encontrado no banco de dados');
-                    return;
-                }
-
-                const container = document.getElementById('pastores-container');
-                container.innerHTML = '';
-
-                pastores.forEach(pastor => {
-                    const col = document.createElement('div');
-                    col.className = 'col-md-6 col-lg-4 mb-4';
-                    
-                    col.innerHTML = `
-                        <div class="pastor-card">
-                            <img src="${pastor.foto_url}" class="pastor-img w-100" alt="${pastor.nome}">
-                            <div class="pastor-body">
-                                <h3 class="pastor-name">${pastor.nome}</h3>
-                                <p class="pastor-role">${pastor.cargo}</p>
-                                <p>${pastor.responsabilidades || 'Servindo a igreja com dedicação'}</p>
-                                <div class="pastor-social">
-                                    <a href="${pastor.facebook}" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="${pastor.whatsapp}" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                                </div>
-                            </div>
-                        </div>`;
-                    
-                    container.appendChild(col);
-                });
-
-            } catch (error) {
-                console.error('Erro ao carregar os pastores:', error);
-            }
-        }
-
-        // Função principal
-        async function initializeApp() {
-            try {
-                console.log('Iniciando aplicação...');
-                
-                const supabaseClient = await initSupabase();
-                
-                // Preenche as seções
-                await fillCultos(supabaseClient);
-                await fillEvents(supabaseClient);
-                await fillPastores(supabaseClient);
-                
-                // Inicializa o carrossel de depoimentos
-                initTestimonials();
-                
-                // Anima as seções quando aparecem na tela
-                animateOnScroll();
-                
-                // Cria partículas flutuantes
-                createParticles();
-
-            } catch (error) {
-                console.error('Erro na inicialização:', error);
-                if (error.code === '42P01') {
-                    alert('Tabela não encontrada. Verifique se criou as tabelas no Supabase.');
-                } else {
-                    alert('Erro ao carregar os dados. Por favor, recarregue a página.');
-                }
-            }
-        }
-
-        // Inicia a aplicação quando o DOM estiver pronto
-        document.addEventListener('DOMContentLoaded', initializeApp);
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
