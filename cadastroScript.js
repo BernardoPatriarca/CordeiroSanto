@@ -342,7 +342,7 @@ const AdminPanel = {
                 contato.nome || '-',
                 contato.cargo || '-',
                 contato.email || '-',
-                contato.responsabilidade ? (contato.responsabilidade.length > 20 ? contato.responsabilidade.substring(0, 20) + '...' : contato.responsabilidade) : '-',
+                contato.responsabilidades ? (contato.responsabilidades.length > 20 ? contato.responsabilidades.substring(0, 20) + '...' : contato.responsabilidades) : '-',
                 this.createActionButtons('contato', contato.id)
             ]);
         });
@@ -576,7 +576,7 @@ const AdminPanel = {
                     $('#contatoNome').val(contato.nome);
                     $('#contatoCargo').val(contato.cargo);
                     $('#contatoEmail').val(contato.email);
-                    $('#contatoResponsabilidade').val(contato.responsabilidade);
+                    $('#contatoResponsabilidade').val(contato.responsabilidades);
                     $('#contatoWhatsapp').val(contato.whatsapp);
                     $('#contatoInstagram').val(contato.instagram);
                     $('#contatoFacebook').val(contato.facebook);
@@ -802,7 +802,7 @@ const AdminPanel = {
                 cargo: $('#contatoCargo').val(),
                 email: $('#contatoEmail').val(),
                 foto_url: $('#contatoFotoUrl').val() || null,
-                responsabilidade: $('#contatoResponsabilidade').val(),
+                responsabilidades: $('#contatoResponsabilidade').val(),
                 whatsapp: $('#contatoWhatsapp').val(),
                 instagram: $('#contatoInstagram').val(),
                 facebook: $('#contatoFacebook').val()

@@ -1,20 +1,9 @@
 const SUPABASE_URL = 'https://phxvwxnvpxuqmewonius.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBoeHZ3eG52cHh1cW1ld29uaXVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM2MzM4NTQsImV4cCI6MjA1OTIwOTg1NH0.vhuck8D8qrxxHVS4X_wnGXmjFUjU1HCwx2STBxRVoM0';
 
-// Função para inicializar o Supabase
 async function initSupabase() {
     try {
-        // Cria o cliente Supabase
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-        // Testa a conexão
-        const { data, error } = await supabaseClient
-            .from('cultos')
-            .select('*')
-            .limit(1);
-
-        if (error) throw error;
-
         return supabaseClient;
     } catch (error) {
         console.error('Erro ao conectar com Supabase:', error);
@@ -194,7 +183,7 @@ async function fillEvents(supabaseClient) {
 
             col.innerHTML = `
                         <div class="event-card">
-                            <img src="${evento.imagem_url || 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4'}" class="event-img" alt="${evento.titulo}">
+                            <img src="${evento.imagem_url}" class="event-img" alt="${evento.titulo}">
                             <div class="event-body">
                                 <span class="event-date"><i class="far fa-calendar-alt me-2"></i>${formattedDate}</span>
                                 <h3>${evento.titulo}</h3>
@@ -344,7 +333,7 @@ async function fillTestimonials(supabaseClient) {
                                     <p>${depoimento.texto}</p>
                                 </div>
                                 <div class="testimonial-author">
-                                    <img src="${depoimento.foto_url || 'https://randomuser.me/api/portraits/men/32.jpg'}" alt="${depoimento.nome}">
+                                    <img src="${depoimento.foto_url}" alt="${depoimento.nome}">
                                     <div>
                                         <div class="testimonial-name">${depoimento.nome}</div>
                                         <div class="testimonial-role">${depoimento.tempo || 'Membro'}</div>
@@ -401,10 +390,10 @@ async function fillPastores(supabaseClient) {
 
             col.innerHTML = `
                         <div class="pastor-card">
-                            <img src="${pastor.foto_url || 'https://randomuser.me/api/portraits/men/32.jpg'}" class="pastor-img w-100" alt="${pastor.nome}">
+                            <img src="${pastor.foto_url}" class="pastor-img w-100" alt="${pastor.nome}">
                             <div class="pastor-body">
                                 <h3 class="pastor-name">${pastor.nome}</h3>
-                                <p class="pastor-role">${pastor.cargo || 'Pastor'}</p>
+                                <p class="pastor-role">${pastor.cargo}</p>
                                 <p>${pastor.descricao || 'Servindo a igreja com dedicação'}</p>
                                 <div class="pastor-social">
                                     ${pastor.facebook ? `<a href="${pastor.facebook}" target="_blank"><i class="fab fa-facebook-f"></i></a>` : ''}
@@ -422,69 +411,6 @@ async function fillPastores(supabaseClient) {
     }
 }
 
-// Função para preencher as informações de contato
-async function fillContactInfo(supabaseClient) {
-    try {
-        // Mostra o spinner
-        document.querySelector('#contact-info-container').innerHTML = '<div class="spinner"></div>';
-
-        // Busca as informações de contato
-        const { data: contato, error } = await supabaseClient
-            .from('configuracoes')
-            .select('*')
-            .eq('chave', 'contato')
-            .single();
-
-        if (error) throw error;
-
-        if (!contato) {
-            document.querySelector('#contact-info-container').innerHTML = `
-                        <p><i class="fas fa-map-marker-alt"></i> Rua Possídio Salomoni, 782 - Cristo Rei, Pato Branco/PR</p>
-                        <p><i class="fas fa-phone"></i> (46)99123-5131</p>
-                        <p><i class="fas fa-phone"></i> (46) 99146-4560</p>
-                        <p><i class="fas fa-envelope"></i> cordeirosanto@gmail.com</p>
-                    `;
-            return;
-        }
-
-        const info = contato.valor;
-        const container = document.getElementById('contact-info-container');
-        container.innerHTML = '';
-
-        if (info.endereco) {
-            const p = document.createElement('p');
-            p.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${info.endereco}`;
-            container.appendChild(p);
-        }
-
-        if (info.telefone1) {
-            const p = document.createElement('p');
-            p.innerHTML = `<i class="fas fa-phone"></i> ${info.telefone1}`;
-            container.appendChild(p);
-        }
-
-        if (info.telefone2) {
-            const p = document.createElement('p');
-            p.innerHTML = `<i class="fas fa-phone"></i> ${info.telefone2}`;
-            container.appendChild(p);
-        }
-
-        if (info.email) {
-            const p = document.createElement('p');
-            p.innerHTML = `<i class="fas fa-envelope"></i> ${info.email}`;
-            container.appendChild(p);
-        }
-
-    } catch (error) {
-        console.error('Erro ao carregar as informações de contato:', error);
-        document.querySelector('#contact-info-container').innerHTML = `
-                    <p><i class="fas fa-map-marker-alt"></i> Rua Possídio Salomoni, 782 - Cristo Rei, Pato Branco/PR</p>
-                    <p><i class="fas fa-phone"></i> (46)99123-5131</p>
-                    <p><i class="fas fa-phone"></i> (46) 99146-4560</p>
-                    <p><i class="fas fa-envelope"></i> cordeirosanto@gmail.com</p>
-                `;
-    }
-}
 
 // Função principal
 async function initializeApp() {
@@ -498,7 +424,6 @@ async function initializeApp() {
         await fillGallery(supabaseClient);
         await fillTestimonials(supabaseClient);
         await fillPastores(supabaseClient);
-        await fillContactInfo(supabaseClient);
 
         // Inicializa o carrossel de depoimentos
         initTestimonials();
