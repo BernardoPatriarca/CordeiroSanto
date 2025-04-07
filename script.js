@@ -161,7 +161,7 @@ async function fillEvents(supabaseClient) {
         const { data: eventos, error } = await supabaseClient
             .from('eventos')
             .select('*')
-            .order('data_evento', { ascending: false });
+            .order('data', { ascending: false });
 
         if (error) throw error;
 
@@ -177,7 +177,7 @@ async function fillEvents(supabaseClient) {
             const col = document.createElement('div');
             col.className = 'col-md-6 col-lg-4';
 
-            const eventDate = new Date(evento.data_evento);
+            const eventDate = new Date(evento.data);
             const options = { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' };
             const formattedDate = eventDate.toLocaleDateString('pt-BR', options);
 
@@ -202,7 +202,7 @@ async function fillEvents(supabaseClient) {
         eventsTable.innerHTML = '';
 
         eventos.forEach(evento => {
-            const eventDate = new Date(evento.data_evento);
+            const eventDate = new Date(evento.data);
             const formattedDate = eventDate.toLocaleDateString('pt-BR');
 
             const row = document.createElement('tr');
