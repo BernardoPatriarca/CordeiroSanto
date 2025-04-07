@@ -11,7 +11,7 @@ $(document).ready(function () {
         const password = $('#password').val();
 
         // Verifica as credenciais
-        if (username === 'admin' && password === '123456') {
+        if (username === 'admin' && password === 'euamojesus') {
             // Login bem-sucedido
             $('#loginModal').hide();
             $('#mainContent').show();
@@ -910,7 +910,7 @@ $(document).ready(() => {
             const username = $('#username').val();
             const password = $('#password').val();
 
-            if (username === 'admin' && password === '123456') {
+            if (username === 'admin' && password === 'euamojesus') {
                 $('#loginModal').hide();
                 $('#mainContent').show();
                 AdminPanel.init();
